@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.guilherme.mynewapplication">
+
+    <!-- Before starting development on your application with the Camera API,
+     you should make sure your manifest has the appropriate declarations to
+     allow use of camera hardware and other related features. -->
+
+    <!-- Camera Permission - Your application must request permission to use a device camera. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--Note: If you are using the camera by invoking an existing camera app, your application does not need to request this permission. -->
+
+    <!-- Camera Features - Your application must also declare use of camera features, for example: -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <!-- Storage Permission - If your application saves images or videos to the device's external storage (SD Card),
+    you must also specify this in the manifest. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+
+    <!--  Take pictures only -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <!-- If your application uses, but does not require a camera in order to function,
+    instead set android:required to false. In doing so, Google Play will allow devices without
+    a camera to download your application. It's then your responsibility to check for the
+    availability of the camera at runtime by calling hasSystemFeature(PackageManager.FEATURE_CAMERA).
+    If a camera is not available, you should then disable your camera features. -->
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
