@@ -7,7 +7,9 @@
      allow use of camera hardware and other related features. -->
 
     <!-- Camera Permission - Your application must request permission to use a device camera. -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true" />
     <!--Note: If you are using the camera by invoking an existing camera app, your application does not need to request this permission. -->
 
     <!-- Camera Features - Your application must also declare use of camera features, for example: -->
@@ -19,12 +21,11 @@
 
 
 
-
-    <!--  Take pictures only -->
+    <!--  Take pictures only
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-    <!-- If your application uses, but does not require a camera in order to function,
+    If your application uses, but does not require a camera in order to function,
     instead set android:required to false. In doing so, Google Play will allow devices without
     a camera to download your application. It's then your responsibility to check for the
     availability of the camera at runtime by calling hasSystemFeature(PackageManager.FEATURE_CAMERA).

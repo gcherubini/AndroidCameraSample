@@ -6,12 +6,26 @@
     android:layout_gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="40dp"
-        android:text="Take picture"
-        android:onClick="onClickTakePictureButton"/>
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take picture"
+            android:onClick="onClickTakePictureButton"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take picture and Save"
+            android:onClick="onClickTakePictureAndStoreButton"/>
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/image_view"
