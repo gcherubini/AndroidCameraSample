@@ -18,7 +18,7 @@
     <!-- Storage Permission - If your application saves images or videos to the device's external storage (SD Card),
     you must also specify this in the manifest. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
 
     <!--  Take pictures only
@@ -33,7 +33,6 @@
 
 
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,6 +40,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <!--
+        From the latest applications target API level 24, to access the files, they need to add a FileProvider
+        Content Provider to their manifest file. Just follow the steps as:
+
+        The ${applicationId} automatically gets the package name of your android application.
+        On the above Statement also, we can use context.getPackageName() instead of hard-coded text of package name.
+
+        The “@xml/file_paths” we need to add it separately in the resources directory.
+        Just create a android resource directory of type xml and create a file named file_paths.xml
+        in that and copy the code exactly with the following.
+
+                    android:authorities="${applicationId}.provider"
+
+        -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.guilherme.mynewapplication.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
 
         <activity android:name=".HomeActivity">
             <intent-filter>
