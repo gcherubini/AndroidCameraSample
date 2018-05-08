@@ -18,7 +18,6 @@
     <!-- Storage Permission - If your application saves images or videos to the device's external storage (SD Card),
     you must also specify this in the manifest. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
 
     <!--  Take pictures only
@@ -49,11 +48,6 @@
         The ${applicationId} automatically gets the package name of your android application.
         On the above Statement also, we can use context.getPackageName() instead of hard-coded text of package name.
 
-        The “@xml/file_paths” we need to add it separately in the resources directory.
-        Just create a android resource directory of type xml and create a file named file_paths.xml
-        in that and copy the code exactly with the following.
-
-                    android:authorities="${applicationId}.provider"
 
         -->
 
