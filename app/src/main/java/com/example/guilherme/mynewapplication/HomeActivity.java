@@ -55,9 +55,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     /**
-     * The Android way of delegating actions to other applications is to invoke an Intent
-     * that describes what you want done. This process involves three pieces: The Intent itself,
-     * a call to start the external Activity, and some code to handle the image data when focus returns to your activity.
+     * The Android way of delegating actions to other applications is to invoke an Intent.
      */
     private void takePicture() {
         if (requestPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE)) return;
@@ -70,9 +68,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
     /**
-     * You have to manage run time permission for this, Because whichever permissions you have
-     * defined in AndroidManifest will not be automatically granted. So like below method you can
-     * check whether you permission is approved or not
+     * You have to manage run time permission for this on new Android devices,
+     * Because whichever permissions you have defined in AndroidManifest will not be automatically granted.
+     * So like below method you can check whether you permission is approved or not and request it
      */
     private Boolean requestPermission(String permission, int permissionCode) {
         boolean wasRequested = false;
@@ -88,7 +86,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return wasRequested;
-
     }
 
     @Override
@@ -143,14 +140,12 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
     /**
      * Because the external storage might be unavailable—such as when the user has mounted the storage to a PC
      * or has removed the SD card that provides the external storage—you should always verify that the volume
      * is available before accessing it. You can query the external storage state by calling getExternalStorageState().
      * If the returned state is MEDIA_MOUNTED, then you can read and write your files. If it's MEDIA_MOUNTED_READ_ONLY, you can only read the files.
      * */
-
     public boolean isExternalStorageWritable() {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
     }

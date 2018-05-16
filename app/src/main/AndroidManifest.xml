@@ -10,7 +10,6 @@
     <uses-permission
         android:name="android.permission.CAMERA"
         android:required="true" />
-    <!--Note: If you are using the camera by invoking an existing camera app, your application does not need to request this permission. -->
 
     <!-- Camera Features - Your application must also declare use of camera features, for example: -->
     <uses-feature android:name="android.hardware.camera" />
@@ -18,19 +17,6 @@
     <!-- Storage Permission - If your application saves images or videos to the device's external storage (SD Card),
     you must also specify this in the manifest. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-
-    <!--  Take pictures only
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-    If your application uses, but does not require a camera in order to function,
-    instead set android:required to false. In doing so, Google Play will allow devices without
-    a camera to download your application. It's then your responsibility to check for the
-    availability of the camera at runtime by calling hasSystemFeature(PackageManager.FEATURE_CAMERA).
-    If a camera is not available, you should then disable your camera features. -->
-
-
 
     <application
         android:allowBackup="true"
@@ -47,8 +33,6 @@
 
         The ${applicationId} automatically gets the package name of your android application.
         On the above Statement also, we can use context.getPackageName() instead of hard-coded text of package name.
-
-
         -->
 
         <provider
